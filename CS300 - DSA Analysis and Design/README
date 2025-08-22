@@ -1,0 +1,6 @@
+The problem being solved by these projects was creating and sorting course information for the Computer Science Department at a mock college, named ABCU.
+In my approach I decided to use a hash table as a data structure to store the data that is imported from the provided file.
+One roadblock I faced, and overcame, in this project was the implementation of printing all courses alphanumerically. Specifically, my program would print
+only the first course from the hash table. I found the issue to be related to looping through the hash table. After adding a while loop to iterate through each bucket,
+the program functioned as it should. Working on these projects has expanded my approach to programming through furthering my understanding of data types. 
+They helped evolve the way I write programs by giving me further insight into class and structure creation used to manipulate data types and process data.
