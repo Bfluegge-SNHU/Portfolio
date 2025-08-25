@@ -1,0 +1,13 @@
+For this project I was tasked with crafting a software design document for The Gaming Room, a fictitious client who hosts
+an Android gaming app by the name of Draw it or Lose it. The client wished to expand their horizons by developing a web application
+that can be played on multiple platforms. In developing this document I'd like to highlight the UML diagram that 
+maps the project for development. The diagram is well formulated and utilizes a singleton pattern to ensure only one game instance
+is created at a time. In working through the design document insight was provided on how to implement the code. Clear and concise decisions allowed
+me to optimize decisions in my coding in order to provide the best software for the client. One part of the document I would revise is the development
+tools portion of the evaluation. The bullet points highlighted effectively define tools that may be utilized for the project, but do not specify any 
+exact tools to be used.
+
+User experience is important when designing software, especially when creating a gaming application. In keeping the user in mind, I made recommendations 
+that prioritize the user's experience. These include using Linux as a server operating platform, utilizing SSD storage technology for smooth server storage,
+and utilizing restful APIs for connectivity. In designing the software I used the UML diagram to maintain organization in my code. I also used common design
+patterns to create clean, reusable code.
