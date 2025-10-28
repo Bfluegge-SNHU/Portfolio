@@ -11,4 +11,10 @@ player = classSelection.characterClass(player)
 player = focusSelection.focusSelection(player['class'], player)
 
 
-print(player)
+print("*" + player['name'] + ": " + player['class'] + "*\n")
+print("Inventory: \n")
+print(player['inv'])
+print("*" * 20)
+print("Spells: \n")
+print(player['spells'])
+print("*" * 20)
