@@ -1,4 +1,4 @@
 Camelot is a fun project that will be converted into a fully fleshed out pygame title (The name is guaranteed to change).
 This is a proof of concept for the character creation portion of the game. Barbarian class selection displays stat block concepts
 and Ranger class selection displays focus selection options and functionality. This game may continue as text based until the pygame rework
-is up and running. Thanks for checking it out!
+is up and running. Naturally, Camelot.py serves as the main while the characterCreate folder contains necessary modules. Thanks for checking it out!
