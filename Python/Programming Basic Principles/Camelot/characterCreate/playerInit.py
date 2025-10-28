@@ -4,8 +4,9 @@ def playerInit():
     #player stuff
     player = {'name' : 'none',
               'inv' : {},
+              'Money' : {'gold' : 0, 'silver' : 0, 'copper' : 0},
               'spells' : {},
-              'class' : 'none',
+              'Class' : 'none',
               'focus' : 'none',
               'Gender' : 'none',
               'Age' : 'none'
@@ -23,5 +24,6 @@ def playerInit():
         print("Welcome to Camelot! Let's design your character!")
     else:
         print("Sorry you are too young for this game!\n")
+        
 
     return player
