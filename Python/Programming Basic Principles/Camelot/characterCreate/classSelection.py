@@ -19,8 +19,8 @@ def characterClass(player):
                 continue
 
         elif Class == '2' or Class == 'Ranger' or Class == 'ranger':
-            print("Ranger:\n Strength: 40\n Dexterity: 60\n Vitality: 45\n Intelligence: 40")
-            selector = input("Are you sure you want to be a Ranger[y/n]:\n")
+            print("--------------------\n|Ranger:        |\n--------------------\n| Strength:     40 |\n--------------------\n| Dexterity:    60 |\n--------------------\n| Vitality:     45 |\n--------------------\n| Intelligence: 40 |\n--------------------\n")
+            selector = input("Are you sure you want to be a Ranger [y/n]:\n")
 
             if selector == 'y' or selector == 'Y' or selector == 'yes' or selector == 'Yes':
                 player['class'] = 'Ranger'
@@ -35,5 +35,6 @@ def characterClass(player):
             player['class'] = 'Paladin'
         else:
             print("Incorrect Selection")
+
 
     return player
