@@ -1,25 +1,17 @@
-import os
+import os 
+from characterCreate import classClasses
+
+playerOne = classClasses.playerOne
 
 def playerInit():
 
-    #player dictionary for temp storage
-    player = {'name' : 'none',
-              'inv' : {},
-              'Money' : {'gold' : 0, 'silver' : 0, 'copper' : 0},
-              'spells' : {},
-              'Class' : 'none',
-              'focus' : 'none',
-              'Gender' : 'none',
-              'Age' : 'none'
-    }
-
     #common user info gathering.
     userName = input("What is your Name?\n")
-    player['name'] = userName
+    playerOne.name = userName
     userGender = input("What is your gender, " + userName + "?\n")
-    player['Gender'] = userGender
+    playerOne.Gender = userGender
     userAge = input("How old are you " + userName + "?\n (Note: Players must be at least thirteen years old!)\n")
-    player['Age'] = userAge
+    playerOne.Age = userAge
 
 #Age limit is 13 check
     if userAge >= "13":
@@ -29,48 +21,75 @@ def playerInit():
         os._exit(0)
         
 
-    return player
+    return playerOne
 
-
-#FIXME: Add the rest of class selection functionality to mimic barbarian
-#FIXME: Add check before selection to verify that's the class they actually want
-#FIXME: Add stats for each class
+#Class Creation Assigns a subclass of whatever class selection is made to the player
 def characterClass(player):
     selected = False
-    
+#While loop to allow for selection
     while selected == False:
         os.system('cls')
-        Class = input("Select your class, " + player['name'] +":\n 1.)Barbarian\n 2.)Ranger\n 3.)Healer\n 4.)Mage\n 5.)Paladin\n")
+        Class = input("Select your class, " + player.name +":\n 1.)Barbarian\n 2.)Ranger\n 3.)Healer\n 4.)Mage\n 5.)Paladin\n")
 
+#Barabarian selection
         if Class == '1' or Class == 'Barbarian' or Class == 'barbarian':
-            print("--------------------\n|Barbarian:\n--------------------\n| Strength:     60 |\n--------------------\n| Dexterity:    30 |\n--------------------\n| Vitality:     65 |\n--------------------\n| Intelligence: 20 |\n--------------------\n")
+            print(classClasses.Barbarian.startingStatFormat())
             selector = input("Are you sure you want to be a Barbarian [y/n]:\n")
 
             if selector == 'y' or selector == 'Y' or selector == 'yes' or selector == 'Yes':
-                player['Class'] = 'Barbarian'
+                playerOne = classClasses.Barbarian(player.name, player.inv, player.spells, player.focus, player.Gender, player.Age, player.Money)
                 selected = True
             else:
                 continue
 
+#Ranger selection
         elif Class == '2' or Class == 'Ranger' or Class == 'ranger':
-            print("--------------------\n|Ranger:\n--------------------\n| Strength:     40 |\n--------------------\n| Dexterity:    60 |\n--------------------\n| Vitality:     45 |\n--------------------\n| Intelligence: 40 |\n--------------------\n")
+            print(classClasses.Ranger.startingStatFormat())
             selector = input("Are you sure you want to be a Ranger [y/n]:\n")
 
             if selector == 'y' or selector == 'Y' or selector == 'yes' or selector == 'Yes':
-                player['Class'] = 'Ranger'
+                playerOne = classClasses.Ranger(player.name, player.inv, player.spells, player.focus, player.Gender, player.Age, player.Money)
                 selected = True
             else:
                 continue
+
+#Healer selection
         elif Class == '3' or Class == 'Healer' or Class == 'healer':
-            player['Class'] = 'Healer'
+            print(classClasses.Healer.startingStatFormat())
+            selector = input("Are you sure you want to be a Healer [y/n]:\n")
+
+            if selector == 'y' or selector == 'Y' or selector == 'yes' or selector == 'Yes':
+                playerOne = classClasses.Healer(player.name, player.inv, player.spells, player.focus, player.Gender, player.Age, player.Money)
+                selected = True
+            else:
+                continue
+
+#Mage selection
         elif Class == '4' or Class == 'Mage' or Class == 'mage':
-            player['Class'] = 'Mage'
+            print(classClasses.Mage.startingStatFormat())
+            selector = input("Are you sure you want to be a Mage [y/n]:\n")
+
+            if selector == 'y' or selector == 'Y' or selector == 'yes' or selector == 'Yes':
+                playerOne = classClasses.Mage(player.name, player.inv, player.spells, player.focus, player.Gender, player.Age, player.Money)
+                selected = True
+            else:
+                continue
+
+#Paladin selection
         elif Class == '5' or Class == 'Paladin' or Class == 'paladin':
-            player['Class'] = 'Paladin'
+            print(classClasses.Paladin.startingStatFormat())
+            selector = input("Are you sure you want to be a Paladin [y/n]:\n")
+
+            if selector == 'y' or selector == 'Y' or selector == 'yes' or selector == 'Yes':
+                playerOne = classClasses.Paladin(player.name, player.inv, player.spells, player.focus, player.Gender, player.Age, player.Money)
+                selected = True
+            else:
+                continue
+
         else:
             print("Incorrect Selection")
 
-    return player
+    return playerOne
 
 
 #Focuses are subcategories for player classes
@@ -78,15 +97,18 @@ def focusSelection(Class, player):
     selected = False
     while selected == False:
         os.system('cls')
-    #Ranger focuses
+
+#Ranger focuses
         if Class == "Ranger":
             focus = input("Select your focus:\n 1.) Thief\n 2.) Survivalist\n(Enter 1 or 2 on the keyboard)\n")
 
             if focus in('1', 'theif', 'Theif'):
-                player['focus'] = 'Thief'
+                player.focus = 'Thief'
+                player.spells = {'Sneak', 'Pickpocket'}
                 selected = True
             elif focus in ('2', 'survivalist', 'Survivalist'):
-                player['focus'] = 'Survivalist'
+                player.focus = 'Survivalist'
+                player.spells = {'Forage', 'Reduce to Resources'}
                 selected = True
             else:
                 print("Incorrect Selection")
@@ -95,35 +117,72 @@ def focusSelection(Class, player):
 
             
 
-    #Barbarian focuses
+#Barbarian focuses
         elif Class == "Barbarian":
-            focusOptions = {'berserker', 'beast'}
+            focus = input("Select your focus:\n 1.) Berserker\n 2.) Beast\n(Enter 1 or 2 on the keyboard)\n")
 
-    #Healer focuses
-        elif Class.name == "Healer":
-            focusOptions = {'shaman', 'druid'}
+            if focus in('1', 'berserker', 'Berserker'):
+                player.focus = 'Berserker'
+                player.spells = {'Rage', 'Bloodlust'}
+                selected = True
+            elif focus in ('2', 'beast', 'Beast'):
+                player.focus = 'Beast'
+                player.spells = {'Transform', 'Brutality'}
+                selected = True
+            else:
+                print("Incorrect Selection")
+                continue
 
-    #Mage focuses
-        elif Class.name == "Mage":
-            focusOptions = {'necromancer', 'wizard/witch'}
+#Healer focuses
+        elif Class == "Healer":
+            focus = input("Select your focus:\n 1.) Shaman\n 2.) Druid\n(Enter 1 or 2 on the keyboard)\n")
 
-    #Paladin focuses
-        elif Class.name == "Paladin":
-            focusOptions = {'Crusader', 'Demonologist'}
+            if focus in('1', 'shaman', 'Shaman'):
+                player.focus = 'Shaman'
+                player.spells = {'Fortify', 'Healing Chant'}
+                selected = True
+            elif focus in ('2', 'druid', 'Druid'):
+                player.focus = 'Druid'
+                player.spells = {'Fortify', 'Healing Chant'}
+                selected = True
+            else:
+                print("Incorrect Selection")
+                continue
+
+#Mage focuses
+        elif Class == "Mage":
+            focus = input("Select your focus:\n 1.) Necromancer\n 2.) Wizard / Witch\n(Enter 1 or 2 on the keyboard)\n")
+
+            if focus in('1', 'Necromancer', 'necromancer'):
+                player.focus = 'Necromancer'
+                player.spells = {'Summon Zombie', 'Necrosis'}
+                selected = True
+            elif focus in ('2', 'Wizard', 'Witch', 'wizard', 'witch'):
+                player.focus = 'Wizard / Witch'
+                player.spells = {'Shock', 'Freeze'}
+                selected = True
+            else:
+                print("Incorrect Selection")
+                continue
+
+#Paladin focuses
+        elif Class == "Paladin":
+            focus = input("Select your focus:\n 1.) Crusader\n 2.) Demonologist\n(Enter 1 or 2 on the keyboard)\n")
+
+            if focus in('1', 'crusader', 'Crusader'):
+                player.focus = 'Crusader'
+                player.spells = {'Smite', 'Fortify'}
+                selected = True
+            elif focus in ('2', 'demonologist', 'Demonologist'):
+                player.focus = 'Demonologist'
+                player.spells = {'Rebuke', 'Smite'}
+                selected = True
+            else:
+                print("Incorrect Selection")
+                continue
                             
     #Incorrect selection
         else:
             print("Incorrect class")
 
     return player
-
-class Player:
-    def __init__(self, name, inv, spells, Class, focus, Gender, Age, Money):
-        self.name = name
-        self.inv = inv
-        self.spells = spells
-        self.Class = Class
-        self.focus = focus
-        self.Gender = Gender
-        self.Age = Age
-        self.Money = Money
