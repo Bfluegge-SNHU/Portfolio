@@ -8,3 +8,9 @@ v 0.7.5
   - Camelot.py renamed to mainMenu.py 
   - Main menu added for future functionalities
   - Character creation process redundancies reduced
+
+v 0.8
+  -Implemented classes for character creation
+  -Implemented abilities and spells for focuses
+  -Reduced redundancy with outputs by creating print functions within classes
+  -All classes fully implemented and selectable
