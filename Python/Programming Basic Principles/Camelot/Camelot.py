@@ -1,21 +1,21 @@
 import pygame
 import os
-from characterCreate import playerInit, focusSelection, classSelection, playerClass
+from characterCreate import playerInit
 
 #Player initialization
 player = playerInit.playerInit()
 os.system('cls')
 
 #Class choice
-player = classSelection.characterClass(player)
+player = playerInit.characterClass(player)
 os.system('cls')
 
 #focus choice
-player = focusSelection.focusSelection(player['Class'], player)
+player = playerInit.focusSelection(player['Class'], player)
 os.system('cls')
 
 #Final creation of player object
-playerOne = playerClass.Player(
+playerOne = playerInit.Player(
     player['name'], 
     player['inv'], 
     player['spells'], 
@@ -38,3 +38,6 @@ confirm = input("Does this information look correct? [y/n] > ")
 if confirm == 'y' or confirm == 'Y' or confirm == 'yes' or confirm == 'Yes':
     print("\n\nWelcome to Camelot! \n\nHome of the knights of the round table! \n\nWhere your story has yet to unfold...\n")
     input("Press Enter to Continue...")
+
+
+
