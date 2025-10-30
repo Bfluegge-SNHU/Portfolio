@@ -93,6 +93,7 @@ def characterClass(player):
 
 
 #Focuses are subcategories for player classes
+#Each focus has it's own abilities that are scalable for each ability level
 def focusSelection(Class, player):
     selected = False
     while selected == False:
@@ -104,11 +105,31 @@ def focusSelection(Class, player):
 
             if focus in('1', 'theif', 'Theif'):
                 player.focus = 'Thief'
-                player.spells = {'Sneak', 'Pickpocket'}
+                player.spells = {'spell1' : {'name' : 'Sneak',
+                                            'desc' : 'Hide yourself in the shadows',
+                                            'dam' : player.stats['Dexterity'],
+                                            'level' : 1,
+                                            }, 
+                                'spell2' : {'name' : 'Pickpocket',
+                                            'desc' : 'Pull riches from your victims',
+                                            'dam' : player.stats['Dexterity'] / 10,
+                                            'level' : 1,
+                                            }
+                                }
                 selected = True
             elif focus in ('2', 'survivalist', 'Survivalist'):
                 player.focus = 'Survivalist'
-                player.spells = {'Forage', 'Reduce to Resources'}
+                player.spells = {'spell1' : {'name' : 'Forage',
+                                             'desc' : 'Hunt for food and items',
+                                            'dam' : player.stats['Dexterity'] / 10,
+                                            'level' : 1
+                                            }, 
+                                'spell2' : {'name' : 'Reduce to Resources',
+                                            'desc' : 'Gather resources from junk items',
+                                            'dam' : player.stats['Dexterity'] / 10,
+                                            'level' : 1
+                                            }
+                                }
                 selected = True
             else:
                 print("Incorrect Selection")
@@ -123,11 +144,33 @@ def focusSelection(Class, player):
 
             if focus in('1', 'berserker', 'Berserker'):
                 player.focus = 'Berserker'
-                player.spells = {'Rage', 'Bloodlust'}
+                player.spells = {'spell1' : {'name' : 'Rage',
+                                           'desc' : 'Your strength increases greatly!',
+                                            'dam' : player.stats['Strength'] + (player.stats['Strength'] / 4),
+                                            'level' : 1,
+                                            'dur' : 10
+                                            }, 
+                                'spell2' : {'name' : 'Bloodlust',
+                                            'desc' : 'Your enemies have never tasted so sweet',
+                                            'dam' : player.stats['Strength'] + (player.stats['Strength'] / 5),
+                                            'level' : 1,
+                                            }
+                                }
                 selected = True
             elif focus in ('2', 'beast', 'Beast'):
                 player.focus = 'Beast'
-                player.spells = {'Transform', 'Brutality'}
+                player.spells = {'spell1' : {'name' : 'Transform',
+                                            'desc' : 'Channel the beast within you',
+                                            'dam' : player.stats['Strength'] + (player.stats['Strength'] / 2),
+                                            'level' : 1,
+                                            'dur' : 10
+                                            }, 
+                                'spell2' : {'name' : 'Brutality',
+                                            'desc' : 'Have you ever witnessed someone fight so ferociously?',
+                                            'dam' : player.stats['Strength'],
+                                            'level' : 1,
+                                            }
+                                }
                 selected = True
             else:
                 print("Incorrect Selection")
@@ -139,11 +182,33 @@ def focusSelection(Class, player):
 
             if focus in('1', 'shaman', 'Shaman'):
                 player.focus = 'Shaman'
-                player.spells = {'Fortify', 'Healing Chant'}
+                player.spells = {'spell1' : {'name' : 'Health Drain',
+                                            'desc' : 'Suck the life from your opponent',
+                                            'dam' : player.stats['Intelligence'] / 4,
+                                            'level' : 1
+                                            }, 
+                                'spell2' : {'name' : 'Fortify',
+                                            'desc' : 'You increase your defense!',
+                                            'dam' : player.stats['Vitality'] + (player.stats['Intelligence'] / 4),
+                                            'level' : 1,
+                                            'dur' : 10
+                                            }
+                                }
                 selected = True
             elif focus in ('2', 'druid', 'Druid'):
                 player.focus = 'Druid'
-                player.spells = {'Fortify', 'Healing Chant'}
+                player.spells = {'spell1' : {'name' : 'Healing Chant',
+                                            'desc' : 'Heal you and your teamates',
+                                            'dam' : player.stats['Intelligence'] / 4,
+                                            'level' : 1
+                                            }, 
+                                'spell2' : {'name' : 'Fortify',
+                                             'desc' : 'You increase your defense!',
+                                             'dam' : player.stats['Vitality'] + (player.stats['Intelligence'] / 4),
+                                             'level' : 1,
+                                             'dur' : 10
+                                            }
+                                }
                 selected = True
             else:
                 print("Incorrect Selection")
@@ -155,11 +220,33 @@ def focusSelection(Class, player):
 
             if focus in('1', 'Necromancer', 'necromancer'):
                 player.focus = 'Necromancer'
-                player.spells = {'Summon Zombie', 'Necrosis'}
+                player.spells = {'spell1' : {'name' : 'Summon Zombie',
+                                            'desc' : 'You pull an undead servant from the earth for battle!',
+                                            'dam' : player.stats['Intelligence'] / 4,
+                                            'level' : 1
+                                            }, 
+                                'spell2' : {'name' : 'Necrosis',
+                                            'desc' : 'You curse your enemy with rot!',
+                                            'dam' : player.stats['Intelligence'] / 10,
+                                            'level' : 1,
+                                            'dur' : 4
+                                            }
+                                }
                 selected = True
             elif focus in ('2', 'Wizard', 'Witch', 'wizard', 'witch'):
                 player.focus = 'Wizard / Witch'
-                player.spells = {'Shock', 'Freeze'}
+                player.spells = {'spell1' : {'name' : 'Shock',
+                                            'desc' : 'Zap your enemies!',
+                                            'dam' : player.stats['Intelligence'] / 4,
+                                            'level' : 1
+                                            }, 
+                                'spell2' : {'name' : 'Freeze',
+                                            'desc' : 'Freeze your opponent in place!',
+                                            'dam' : 0,
+                                            'level' : 1,
+                                            'dur' : 4
+                                            }
+                                }
                 selected = True
             else:
                 print("Incorrect Selection")
@@ -171,11 +258,32 @@ def focusSelection(Class, player):
 
             if focus in('1', 'crusader', 'Crusader'):
                 player.focus = 'Crusader'
-                player.spells = {'Smite', 'Fortify'}
+                player.spells = {'spell1' : {'name' : 'Smite',
+                                            'desc' : 'You call upon the gods to release their fury onto your opponent',
+                                            'dam' : player.stats['Intelligence'] / 4,
+                                            'level' : 1
+                                            }, 
+                                'spell2' : {'name' : 'Fortify',
+                                             'desc' : 'You increase your defense!',
+                                             'dam' : player.stats['Vitality'] + (player.stats['Intelligence'] / 4),
+                                             'level' : 1,
+                                             'dur' : 10
+                                            }
+                                }
                 selected = True
             elif focus in ('2', 'demonologist', 'Demonologist'):
                 player.focus = 'Demonologist'
-                player.spells = {'Rebuke', 'Smite'}
+                player.spells = {'spell1' : {'name' : 'Smite',
+                                            'desc' : 'You call upon the gods to release their fury onto your opponent',
+                                            'dam' : player.stats['Intelligence'] / 4,
+                                            'level' : 1
+                                            }, 
+                                'spell2' : {'name' : 'Rebuke',
+                                            'desc' : 'Burn your opponents from the inside out!',
+                                             'dam' : player.stats['Intelligence'] / 5,
+                                             'level' : 1
+                                            }
+                                }
                 selected = True
             else:
                 print("Incorrect Selection")
