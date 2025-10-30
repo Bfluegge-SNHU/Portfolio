@@ -16,12 +16,12 @@ playerOne = Player()
 class Barbarian(Player):
     def __init__(self, name, inv, spells, focus, Gender, Age, Money):
 
-        stats = {'Strength' : 20,
+        self.stats = {'Strength' : 20,
                 'Dexterity' : 15,
                 'Vitality' : 15,
                 'Intelligence' : 10}
     
-        weapons = {'Bow', 
+        self.weapons = {'Bow', 
                 'Crossbow', 
                 'Pike', 
                 'Axe', 
@@ -47,7 +47,7 @@ class Barbarian(Player):
         print("Inventory: \n" + str(self.inv))
         print("Gold: " + str(self.Money['gold']) + " Silver: " + str(self.Money['silver']) + " Copper: " + str(self.Money['copper']))
         print("*" * 20)
-        print("Abilities: \n" + str(self.spells))
+        print("Abilities: \n" + "1.) " + str(self.spells['spell1']['name']) + " 2.) " + str(self.spells['spell2']['name']))
         print("*" * 20)
 
 
@@ -57,12 +57,12 @@ class Barbarian(Player):
 class Ranger(Player):
     def __init__(self, name, inv, spells, focus, Gender, Age, Money):
 
-        stats = {'Strength' : 15,
+        self.stats = {'Strength' : 15,
                 'Dexterity' : 20,
                 'Vitality' : 10,
                 'Intelligence' : 15}
     
-        weapons = {'Bow', 
+        self.weapons = {'Bow', 
                 'Crossbow',  
                 'Dagger', 
                 'Sword',
@@ -82,7 +82,7 @@ class Ranger(Player):
         print("Inventory: \n" + str(self.inv))
         print("Gold: " + str(self.Money['gold']) + " Silver: " + str(self.Money['silver']) + " Copper: " + str(self.Money['copper']))
         print("*" * 20)
-        print("Abilities: \n" + str(self.spells))
+        print("Abilities: \n" + "1.) " + str(self.spells['spell1']['name']) + " 2.) " + str(self.spells['spell2']['name']))
         print("*" * 20)
 
     def startingStatFormat():
@@ -91,12 +91,12 @@ class Ranger(Player):
 class Healer(Player):
     def __init__(self, name, inv, spells, focus, Gender, Age, Money):
 
-        stats = {'Strength' : 10,
+        self.stats = {'Strength' : 10,
                 'Dexterity' : 15,
                 'Vitality' : 15,
                 'Intelligence' : 20}
     
-        weapons = {'Staff', 
+        self.weapons = {'Staff', 
                 'wand',   
                 'Sword',
                 }
@@ -115,7 +115,7 @@ class Healer(Player):
         print("Inventory: \n" + str(self.inv))
         print("Gold: " + str(self.Money['gold']) + " Silver: " + str(self.Money['silver']) + " Copper: " + str(self.Money['copper']))
         print("*" * 20)
-        print("Spells: \n" + str(self.spells))
+        print("Abilities: \n" + "1.) " + str(self.spells['spell1']['name']) + " 2.) " + str(self.spells['spell2']['name']))
         print("*" * 20)
 
     def startingStatFormat():
@@ -124,12 +124,12 @@ class Healer(Player):
 class Mage(Player):
     def __init__(self, name, inv, spells, focus, Gender, Age, Money):
 
-        stats = {'Strength' : 10,
+        self.stats = {'Strength' : 10,
                 'Dexterity' : 15,
                 'Vitality' : 15,
                 'Intelligence' : 20}
     
-        weapons = {'Staff', 
+        self.weapons = {'Staff', 
                 'wand',   
                 'Sword',
                 }
@@ -137,7 +137,7 @@ class Mage(Player):
         self.Class = 'Mage'
         self.name = name
         self.inv = inv
-        self.spells = {'Shock', 'Freeze', 'Fear'}
+        self.spells = spells
         self.focus = focus
         self.Gender = Gender
         self.Age = Age
@@ -148,7 +148,7 @@ class Mage(Player):
         print("Inventory: \n" + str(self.inv))
         print("Gold: " + str(self.Money['gold']) + " Silver: " + str(self.Money['silver']) + " Copper: " + str(self.Money['copper']))
         print("*" * 20)
-        print("Spells: \n" + str(self.spells))
+        print("Abilities: \n" + "1.) " + str(self.spells['spell1']['name']) + " 2.) " + str(self.spells['spell2']['name']))
         print("*" * 20)
 
     def startingStatFormat():
@@ -157,12 +157,12 @@ class Mage(Player):
 class Paladin(Player):
     def __init__(self, name, inv, spells, focus, Gender, Age, Money):
 
-        stats = {'Strength' : 15,
+        self.stats = {'Strength' : 15,
                 'Dexterity' : 10,
                 'Vitality' : 15,
                 'Intelligence' : 20}
     
-        weapons = {'Bow', 
+        self.weapons = {'Bow', 
                 'Crossbow', 
                 'Pike', 
                 'Axe', 
@@ -187,7 +187,7 @@ class Paladin(Player):
         print("Inventory: \n" + str(self.inv))
         print("Gold: " + str(self.Money['gold']) + " Silver: " + str(self.Money['silver']) + " Copper: " + str(self.Money['copper']))
         print("*" * 20)
-        print("Abilities: \n" + str(self.spells))
+        print("Abilities: \n" + "1.) " + str(self.spells['spell1']['name']) + " 2.) " + str(self.spells['spell2']['name']))
         print("*" * 20)
 
     def startingStatFormat():
