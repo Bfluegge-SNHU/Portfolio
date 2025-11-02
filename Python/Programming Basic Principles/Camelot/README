@@ -15,7 +15,7 @@ v 0.8
   -Reduced redundancy with outputs by creating print functions within classes
   -All classes fully implemented and selectable
 
-v 8.1
+v 0.8.1
   -Fleshed out abilities more
   -implemented rough HUD concept
   -implemented HUD tutorial
