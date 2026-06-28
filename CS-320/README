@@ -1,0 +1,39 @@
+CS 320 Portfolio Reflection
+
+This repository includes selected work from my software testing, automation, and quality assurance course. From Project One, I included my Contact Service files: Contact.java, ContactService.java, 
+ContactTest.java, and ContactServiceTest.java. From Project Two, I included my summary and reflections report. Together, these files show my ability to create Java classes based on requirements, 
+write JUnit tests, validate inputs, and reflect on software testing strategies.
+
+How can I ensure that my code, program, or software is functional and secure?
+
+I can ensure that my code is functional and secure by writing tests that prove the program behaves correctly with both valid and invalid input. 
+In this project, I used JUnit tests to confirm that contact objects could be created, updated, retrieved, and deleted correctly. 
+I also tested invalid inputs, such as null values, phone numbers that were not exactly ten digits, and contact IDs that were longer than allowed. 
+This helped ensure that the program rejected bad data instead of allowing it into the system.
+
+Security also starts with controlling what data is accepted by the program. For example, my Contact class validates fields before assigning values, 
+and my ContactService class prevents duplicate contact IDs. These checks help protect data integrity. 
+In future projects, I would continue improving security by validating inputs, limiting access to sensitive operations, avoiding unnecessary data exposure, 
+and testing for failure cases instead of only testing successful paths.
+
+How do I interpret user needs and incorporate them into a program?
+
+I interpret user needs by breaking requirements down into specific behaviors the software must support. 
+For this project, the requirements stated that each contact needed a unique ID, a first name, a last name, a phone number, and an address, with specific limits for each field. 
+I translated those needs into class attributes, validation rules, service methods, and unit tests.
+
+Instead of guessing what the program should do, I used the requirements as a checklist. 
+If the requirement said the contact ID could not be longer than ten characters, I wrote code to enforce that rule and a test to verify it. 
+This approach helped me connect the customer’s needs directly to the final implementation. It also made the program easier to test because each requirement had a clear expected result.
+
+How do I approach designing software?
+
+I approach software design by first identifying the main objects, responsibilities, and rules in the system. 
+For the Contact Service, I separated the contact data from the service that manages contacts. 
+The Contact class is responsible for storing and validating individual contact information, while the ContactService class is responsible for adding, deleting, updating, and retrieving contacts.
+
+This separation made the design easier to understand and test. Each class had a clear purpose, which reduced confusion and made the code easier to maintain. 
+  Going forward, I plan to continue designing software in small, focused pieces. I want each class or module to have a specific responsibility, 
+and I want my tests to confirm that each part works before combining it with the rest of the system.
+
+Overall, this project helped me understand that software design and testing are connected. Good design makes testing easier, and good testing helps confirm that the design actually meets the requirements.
