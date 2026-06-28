@@ -1,0 +1,47 @@
+CS 255 Portfolio Reflection
+
+This repository contains the Business Requirements Document and the System Design Document created for the DriverPass project. 
+Together, these documents demonstrate my ability to gather customer requirements, analyze business needs, 
+and translate those requirements into a complete system design using UML diagrams and supporting documentation.
+
+Briefly summarize the DriverPass project. Who was the client? What type of system did they want you to design?
+
+The DriverPass project focused on designing a web-based system for a company that provides driver's education and behind-the-wheel training. 
+The client wanted a system that would allow students to register for accounts, schedule driving lessons, access online courses and practice tests, 
+and stay up to date with DMV requirements. The business also needed tools for managing appointments, drivers, vehicles, user accounts, and reports while maintaining secure, role-based access for employees.
+
+What did you do particularly well?
+
+I believe my strongest work was translating the client's requirements into a structured system design. 
+Rather than immediately thinking about implementation, I focused on understanding how the different users would interact with the system and how the different components would work together. 
+Creating the UML diagrams helped me visualize those relationships before any code would be written. 
+I also paid close attention to ensuring that each requirement mentioned during the client interview was represented somewhere in the final design.
+
+If you could choose one part of your work on these documents to revise, what would you pick? How would you improve it?
+
+If I were to revise one part of this project, I would spend more time refining the UML diagrams, particularly the class diagram. 
+While it accurately represents the major classes and their relationships, I now have a much better understanding of object-oriented design than I did when I first created it. 
+I would simplify some relationships, improve the organization of the diagram, and include methods where appropriate to better communicate how the classes interact. 
+As I continue gaining experience with software architecture, I recognize that there are often multiple valid ways to model the same system, 
+and I would use what I have learned to create a cleaner and more maintainable design.
+
+How did you interpret the user's needs and implement them into your system design? Why is it so important to consider the user's needs when designing?
+
+I interpreted the client's needs by identifying the primary goals of each type of user and then designing the system around those responsibilities. 
+Students needed an easy way to register, schedule lessons, and access learning materials. Employees needed tools to manage appointments and customer information. 
+The IT administrator required account management capabilities, while the owner needed reporting and oversight features. 
+By separating these responsibilities into different parts of the system, I created a design that supports each user's role without giving unnecessary access to sensitive information.
+
+Considering the user's needs is one of the most important parts of software design because the success of a system depends on whether it solves the customer's actual problems. 
+A technically impressive application has little value if it does not support the workflows that users rely on every day. 
+Understanding those needs before designing the system helps reduce rework later in the development process.
+
+How do you approach designing software? What techniques or strategies would you use in the future to analyze and design a system?
+
+This project reinforced the importance of designing software before writing code. I now approach software design by first understanding the problem, 
+identifying the users, documenting the requirements, and breaking the system into smaller responsibilities. After gathering the requirements, 
+I use diagrams such as use case, activity, sequence, and class diagrams to visualize how the system should function before implementation begins.
+
+Going forward, I plan to continue using this structured approach. I have also learned the importance of building software incrementally, 
+validating requirements throughout development, and revisiting the design as new information becomes available. Careful planning at the beginning of a project leads to cleaner code, 
+fewer defects, and a system that is easier to maintain and expand in the future.
