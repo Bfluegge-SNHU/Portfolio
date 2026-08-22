@@ -1,0 +1,31 @@
+For Project Two, I developed an intelligent pirate agent capable of solving a pathfinding problem using deep Q-learning. I was provided with starter code that established the maze environment, 
+experience memory, neural network structure, and supporting functions for interacting with the treasure hunt game. 
+My primary responsibility was completing the Q-training algorithm that allowed the pirate to learn how to navigate the environment and reach the treasure.
+
+The training algorithm implemented an epsilon-greedy strategy to balance exploration and exploitation. During training, the pirate interacted with the maze, stored its experiences, 
+and used those experiences to train the neural network. The model learned to predict Q-values for the available actions and increasingly relied on those predictions as training progressed. 
+The completed agent achieved a 100% recent win rate during training and was tested using the provided validation functions.
+
+Computer scientists use computational methods to analyze problems and develop solutions that can be implemented through software and computer systems. 
+This involves more than simply writing code. It requires understanding a problem, identifying its constraints, selecting an appropriate approach, implementing a solution, 
+and evaluating whether that solution actually accomplishes its intended goal.
+
+This matters because software increasingly makes decisions or supports decisions in areas that affect people directly. 
+Artificial intelligence demonstrates this particularly well because an AI system's behavior is influenced by its training process, available information, algorithms, and objectives. 
+Computer scientists therefore need to understand not only how to make a system function, but also why it behaves the way it does.
+
+I approach problems by first breaking the larger problem into smaller components that can be understood and tested individually. I identify the expected result, 
+determine what information and tools are available, and then develop an implementation that can be evaluated against that goal. If the result is incorrect, 
+I use the behavior of the program and available data to determine which part of the implementation needs to be changed.
+
+The reinforcement-learning project demonstrated this process clearly. The objective was for the pirate to reach the treasure, but the solution was not simply a predefined path. 
+The problem had to be represented through states, actions, rewards, exploration, exploitation, and repeated training. By evaluating the agent's performance over time, 
+I could determine whether the algorithm was actually learning rather than simply executing successfully.
+
+As a computer scientist, I have a responsibility to create systems that are reliable, secure, and designed with consideration for the people affected by them. 
+This includes protecting user information, reducing unnecessary risks, testing software appropriately, and being transparent about the capabilities and limitations of a system. 
+With artificial intelligence, developers should also consider whether training data, reward structures, or algorithmic decisions could introduce unintended behavior or bias.
+
+There is also a responsibility to the organization developing or deploying the software. A computer scientist should produce maintainable and well-documented solutions, 
+communicate technical limitations accurately, protect organizational and user data, and avoid presenting a system as more reliable than testing demonstrates. Ultimately, 
+technical success should include both making the software work and ensuring that it behaves responsibly within the environment where it will be used.
